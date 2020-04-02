@@ -1,0 +1,214 @@
+* {
+    /* font-family: "Ubuntu", helvetica; */
+    /* font-family: "Rock Salt", helvetica; */
+    font-family: "Rancho", helvetica;
+    font-size: 25px;
+}
+
+body {
+    position: relative;
+    background-image: url("/kibbutz-bg.jpg");
+    object-fit: cover;
+    background-repeat: round;
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+    /* font-family: "Rock Salt", helvetica; */
+}
+
+#outer-container {
+    display: flex;
+    /* grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 200px 200px; */
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+img {
+    width: 250px;
+    height: 250px;
+    border-radius: 10%;
+    border: #4d4d4d 4px solid;
+    /* height: auto; */
+    object-fit: cover;
+    margin-top: 10px;
+    /* overflow: hidden; */
+}
+
+img[alt="chosenimage"] {
+    margin-top: 0;
+    width: 400px;
+    height: 400px;
+}
+
+#inner-container {
+    border: #4d4d4d 4px solid;
+    border-radius: 10%;
+    margin: 10px;
+    background-color: #ffccff;
+    width: 370px;
+    height: 370px;
+    text-align: center;
+    justify-content: center;
+}
+.title {
+    text-align: center;
+    margin-top: 10px;
+    width: 200px;
+    margin-left: 85px;
+}
+form input,
+button {
+    border: #660066 2px solid;
+    border-radius: 20%;
+    margin: 4px;
+    text-align: center;
+    font-size: 20px;
+    width: 200px;
+    color: #330033;
+    font-family: "Rancho", helvetica;
+}
+
+button {
+    background-color: #cc00cc;
+    width: 100px;
+    height: 27.33px;
+}
+
+#x {
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    left: 92%;
+    top: 2%;
+    font-size: 20px;
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+input {
+    /* font-family: "Ubuntu", helvetica; */
+}
+
+#file {
+    font-size: 17px;
+}
+
+/* .inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+} */
+
+/* .inputfile + label {
+    border: #660066 2px solid;
+    border-radius: 20%;
+    margin: 4px;
+    text-align: center;
+    font-size: 15px;
+    width: 200px;
+    color: #330033;
+} */
+
+/* .inputfile + label:hover {
+    background-color: red;
+} */
+
+#more {
+    position: absolute;
+    top: 100%;
+    margin: 8px;
+    /* display: inline-block; */
+}
+
+#one-image {
+    border: black solid 3px;
+    width: 60%;
+    /* height: 600px; */
+    position: absolute;
+    left: 20%;
+    top: 50px;
+    z-index: 1;
+    text-align: center;
+    border-radius: 4%;
+    background-color: #739900;
+    /* overflow: visible; */
+}
+
+#next-back {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#next-back p {
+    margin-top: 40px;
+    font-size: 25px;
+}
+
+#back {
+    margin-left: 45px;
+}
+
+#next {
+    margin-right: 45px;
+}
+
+#title {
+    font-size: 30px;
+    margin: 0;
+}
+#description {
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+#username {
+    font-size: 12px;
+}
+
+.inner-comment {
+    border: black 2px solid;
+    background-color: pink;
+    border-radius: 10%;
+    margin: 10px;
+    width: 80%;
+    margin-left: 10%;
+    /* position: relative; */
+}
+
+#comment {
+    font-size: 18px;
+    margin: 2px;
+}
+
+#comment-username {
+    font-size: 10px;
+    margin: 2px;
+}
+
+.delete {
+    /* position: absolute; */
+    /* margin-left: 60%; */
+    width: 25px;
+    height: 25px;
+    /* margin-top: -95px;
+    margin-left: 250px; */
+    cursor: pointer;
+}
+
+.titleTrash {
+    display: flex;
+}

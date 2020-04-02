@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+    <title>Imageboard</title>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rock+Salt&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rancho|Rock+Salt&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div id="main">
+        <h1>KIBBUTZ LIFE</h1>
+        <form>
+            <input v-model='title' type="text" name="title" placeholder="title">
+            <input v-model='description' type="text" name="description" placeholder="description">
+            <input v-model='username' type="text" name="username" placeholder="username">
+            <input @change="handleChange" id="file" class="inputfile" type="file" name="file" accept="image/*">
+            <!-- <input type="file" name="file" id="file" class="inputfile" /> -->
+            <!-- <label for="file">choose file</label> -->
+            <button @click="handleClick">submit</button>
+        </form>
+        <div id="outer-container">
+                    <div v-for="image in images" id="inner-container">
+                        <!-- <button @click='deleteImage' class="delete" :id="image.id">delete</button> -->
+                        <!-- <a :href='"#" + image.id'> -->
+                            <a :href='"#" + image.id'><img  :src="image.url" alt="image"></a>
+                            <div class="titleTrash">
+
+                            <p class="title"> {{image.title}} </p>
+                        <!-- </a> -->
+                        <img src="/trash.jpg" @click='deleteImage' class="delete" :id="image.id"></img>
+                    </div>
+
+                    </div>
+        <button v-if='button' @click='clickMore' id="more">more</button>
+
+    </div>
+
+
+
+        <!-- <h2 @click="muffin">click here...</h2>
+        <h2>The best cohort is...{{cohort}} </h2>
+        <h2>Maths!! 2 * 2 = {{2 * 2}}</h2>
+        <h2>my first name is: {{name.first + " " + name.last}}</h2>
+        <h2>capatalize: {{'inbal'.toUpperCase()}}</h2>
+        <h2 v-if="seen">Can you see me?</h2>
+
+        <ul>
+            <li v-for="city in cities" @click="muffin(city.name)">{{city.name}}, {{city.country}}</li>
+        </ul> -->
+        <!-- !!!LEFT: refering to the props arrai in the vue.component and the RIGHT refers to the vue.instance -->
+
+            <my-first-component @message='handleMessage' v-if='id' :id='id'></my-first-component>
+
+    </div>
+
+    <!-- OUT SIDE OF MAIN -->
+    <!-- needs to be wrapped in one html element -->
+    <!-- <script id="my-component" type="text/x-template">
+        <div>
+            <h1>the image id is: {{ id }}</h1>
+            <p @click="handleClick"> im a p tag </p>
+        </div>
+    </script> -->
+
+
+    <script id="my-component" type="text/x-template">
+
+        <div id="one-image">
+            <div id="next-back">
+                <p id='back'><a :href='"#" + chosenimage.prevId' v-if="chosenimage.prevId">back</a></p>
+                <p id="next"><a :href='"#" + chosenimage.nextId' v-if="chosenimage.nextId">next </a></p>
+            </div>
+            <button @click="closeImage" id="x">x</button>
+            <!-- <button @click="closeImage" id="delete">delete</button> -->
+            <img :src="chosenimage.url" alt="chosenimage">
+
+            <p id="title">{{ chosenimage.title }}</p>
+            <p id="description">{{ chosenimage.description }}</p>
+            <p id="username">uploaded by {{ chosenimage.username }}</p>
+
+            <form>
+                <input v-model='user' type="text" name="user" placeholder="username">
+                <input v-model='comment' type="text" name="comment" placeholder="comment">
+                <button @click="submitClick">submit</button>
+            </form>
+
+            <div v-for="comment in comments" class="inner-comment">
+                    <p id="comment"> {{comment.comment}} </p>
+                    <p id="comment-username">uploaded by {{comment.username}} </p>
+            </div>
+
+        </div>
+    </script>
+
+
+
+    <script src="/js/vue.js"></script>
+    <script src="/js/axios.min.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>
