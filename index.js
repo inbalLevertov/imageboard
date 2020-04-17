@@ -39,9 +39,6 @@ app.get("/image/:id", (req, res) => {
         // console.log("result of db.getCards.rows: ", result.rows);
         res.json(result.rows);
     });
-    // db.getSelectedComments(id).then(result => {
-    //     res.json(result.rows);
-    // });
 });
 
 app.get("/pastComments/:id", (req, res) => {
@@ -122,35 +119,5 @@ app.get("/delete/:id", (req, res) => {
             console.log("error in db.deleteImage: ", err);
         });
 });
-//
-// app.get("/back/:currentId", (req, res) => {
-//     let currentId = req.params.currentId;
-//     db.getPrevId(currentId)
-//         .then(result => {
-//             res.json(result);
-//         })
-//         .catch(err => {
-//             console.log("error in db.getPrevId: ", err);
-//         });
-// });
 
-// app.get("/cities", (req, res) => {
-//     console.log("I am the get route for /cities");
-//     const cities = [
-//         {
-//             name: "Berlin",
-//             country: "Germany"
-//         },
-//         {
-//             name: "Guayaquil",
-//             country: "Ecuador"
-//         },
-//         {
-//             name: "Kinross",
-//             country: "Scotland"
-//         }
-//     ];
-//     //we will be using res.json alot!!
-//     res.json(cities);
-// });
-app.listen(8080, () => console.log("Imageboard!!!"));
+app.listen(process.env.PORT || 8080, () => console.log("Imageboard!!!"));
